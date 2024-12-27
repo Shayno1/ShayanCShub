@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shayan's Brunel CS Hub</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="/static/images/brunel-logo.png" alt="Brunel University London" class="brunel-logo">
+            <div class="header-text">
+                <h1>Shayan's Brunel CS Hub</h1>
+                <p>Select a module to explore topics by week.</p>
+            </div>
+            <div class="header-buttons">
+                <button class="info-button" onclick="toggleModal()">
+                    <i class="fas fa-info-circle"></i>
+                </button>
+                <a href="https://www.linkedin.com/in/shayanoo/" target="_blank" class="linkedin-button">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modal/popup -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="toggleModal()">&times;</span>
+            <h2>Disclaimer</h2>
+            <p>This is Shayan's personal project and is not affiliated with Brunel University, although questions and concepts are from coursework completed during my studies.</p>
+            <p>This website is made for educational purposes only. I don't claim ownership of the content presented here.</p>
+        </div>
+    </div>
+
+    <main class="module-grid">
+        <a href="/module/logic" class="module-card">
+            <img src="/static/images/logic.jpg" alt="Logic and Computation">
+            <div class="card-content">
+                <h2>Logic and Computation</h2>
+                <p>Explore mathematical foundations and computational theory</p>
+            </div>
+        </a>
+        <a href="/module/systems" class="module-card">
+            <img src="/static/images/systems.jpg" alt="Information Systems">
+            <div class="card-content">
+                <h2>Information Systems and Organisations</h2>
+                <p>Learn about organizational systems and management</p>
+            </div>
+        </a>
+        <a href="/module/programming" class="module-card">
+            <img src="/static/images/programming.jpg" alt="Introductory Programming">
+            <div class="card-content">
+                <h2>Introductory Programming</h2>
+                <p>Master the fundamentals of programming</p>
+            </div>
+        </a>
+    </main>
+
+    <script>
+        function toggleModal() {
+            const modal = document.getElementById('infoModal');
+            modal.classList.toggle('show-modal');
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('infoModal');
+            if (event.target == modal) {
+                modal.classList.remove('show-modal');
+            }
+        }
+    </script>
+</body>
+</html>

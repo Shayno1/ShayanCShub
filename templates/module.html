@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ module.name }} - Study Hub</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="/static/images/brunel-logo.png" alt="Brunel University London" class="brunel-logo">
+            <div class="header-text">
+                <h1>{{ module_name | capitalize }}</h1>
+            </div>
+            <div class="header-buttons">
+                <a href="/" class="back-button">Back to Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="module-container">
+        <div class="sidebar">
+            <h2>{% if module_name == 'systems' %}Blocks{% else %}Weeks{% endif %}</h2>
+            <ul>
+                {% if module_name == "logic" %}
+                    <li data-week="week1" class="week-item">Week 1: Sets: The Language of Mathematics</li>
+                    <li data-week="week2" class="week-item">Week 2: Introduction to Logic: Propositional Logic</li>
+                    <li data-week="week3" class="week-item">Week 3: Valid Arguments and Logical Equivalences</li>
+                    <li data-week="week4" class="week-item">Week 4: Predicate Logic</li>
+                    <li data-week="week5" class="week-item">Week 5: Universal Conditional Statements and Logic Circuits</li>
+                    <li data-week="week7" class="week-item">Week 7: The Theory of Computation and Regular Expressions</li>
+                    <li data-week="week8" class="week-item">Week 8: Models of Computation: Finite State Automata</li>
+                    <li data-week="week9" class="week-item">Week 9: Context-Free Languages & Grammars</li>
+                    <li data-week="week10" class="week-item">Week 10: Turing Machine and the Limits of Computability</li>
+                    <li data-week="week11" class="week-item">Week 11: Combinatorics</li>
+                {% elif module_name == "systems" %}
+                    <li data-week="block1" class="week-item">Block 1: Information Systems</li>
+                    <li data-week="block2" class="week-item">Block 2: System Analysis & Design</li>
+                    <li data-week="block3" class="week-item">Block 3: System Development Methodologies</li>
+                    {% elif module_name == "programming" %}
+                    <li data-week="week1" class="week-item">Week 1: Introduction to Java & Eclipse</li>
+                    <li data-week="week2" class="week-item">Week 2: Introduction to Programming & Software Projects</li>
+                    <li data-week="week3" class="week-item">Week 3: Variables</li>
+                    <li data-week="week4" class="week-item">Week 4: Conditional Statements</li>
+                    <li data-week="week5" class="week-item">Week 5: Loops</li>
+                    <li data-week="week7" class="week-item">Week 7: Objects and Arrays</li>
+                    <li data-week="week8" class="week-item">Week 8: Built in Functions and Methods</li>
+                    <li data-week="week9" class="week-item">Week 9: User Defined Functions and Methods</li>
+                    <li data-week="week10" class="week-item">Week 10: Testing</li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="content">
+            {% if module_name == "logic" %}
+            <div id="week1" class="topic-content active">
+                <h2>Week 1: Sets: The Language of Mathematics</h2>
+                <p>Content for Week 1: Sets: The Language of Mathematics will be here...</p>
+            </div>
+            <div id="week2" class="topic-content hidden">
+                <h2>Week 2: Introduction to Logic: Propositional Logic</h2>
+                <p>Content for Week 2: Introduction to Logic: Propositional Logic will be here...</p>
+            </div>
+            <div id="week3" class="topic-content hidden">
+                <h2>Week 3: Valid Arguments and Logical Equivalences</h2>
+                <p>Content for Week 3: Valid Arguments and Logical Equivalences will be here...</p>
+            </div>
+            <div id="week4" class="topic-content hidden">
+                <h2>Week 4: Predicate Logic</h2>
+                <p>Content for Week 4: Predicate Logic will be here...</p>
+            </div>
+            <div id="week5" class="topic-content hidden">
+                <h2>Week 5: Universal Conditional Statements and Logic Circuits</h2>
+                <p>Content for Week 5: Universal Conditional Statements and Logic Circuits will be here...</p>
+            </div>
+            <div id="week7" class="topic-content hidden">
+                <h2>Week 7: The Theory of Computation and Regular Expressions</h2>
+                <p>Content for Week 7: The Theory of Computation and Regular Expressions will be here...</p>
+            </div>
+            <div id="week8" class="topic-content hidden">
+                <h2>Week 8: Models of Computation: Finite State Automata</h2>
+                <p>Content for Week 8: Models of Computation: Finite State Automata will be here...</p>
+            </div>
+            <div id="week9" class="topic-content hidden">
+                <h2>Week 9: Context-Free Languages & Grammars</h2>
+                <p>Content for Week 9: Context-Free Languages & Grammars will be here...</p>
+            </div>
+            <div id="week10" class="topic-content hidden">
+                <h2>Week 10: Turing Machine and the Limits of Computability</h2>
+                <p>Content for Week 10: Turing Machine and the Limits of Computability will be here...</p>
+            </div>
+            <div id="week11" class="topic-content hidden">
+                <h2>Week 11: Combinatorics</h2>
+                <p>Content for Week 11: Combinatorics will be here...</p>
+            </div>
+        {% elif module_name == "systems" %}
+                <div id="block1" class="topic-content active">
+                    <h2>Block 1: Information Systems</h2>
+                    <p>Content for Block 1: Information Systems will be here...</p>
+                </div>
+                <div id="block2" class="topic-content hidden">
+                    <h2>Block 2: System Analysis & Design</h2>
+                    <p>Content for Block 2: System Analysis & Design will be here...</p>
+                </div>
+                <div id="block3" class="topic-content hidden">
+                    <h2>Block 3: System Development Methodologies</h2>
+                    <p>Content for Block 3: System Development Methodologies will be here...</p>
+                </div>
+                {% elif module_name == "programming" %}
+                <div id="week1" class="topic-content active">
+                    <h2>Week 1: Introduction to Java & Eclipse</h2>
+                    <p>Content for Week 1: Introduction to Java & Eclipse will be here...</p>
+                </div>
+                <div id="week2" class="topic-content hidden">
+                    <h2>Week 2: Introduction to Programming & Software Projects</h2>
+                    <p>Content for Week 2: Introduction to Programming & Software Projects will be here...</p>
+                </div>
+                <div id="week3" class="topic-content hidden">
+                    <h2>Week 3: Variables</h2>
+                    <p>Content for Week 3: Variables will be here...</p>
+                </div>
+                <div id="week4" class="topic-content hidden">
+                    <h2>Week 4: Conditional Statements</h2>
+                    <p>Content for Week 4: Conditional Statements will be here...</p>
+                </div>
+                <div id="week5" class="topic-content hidden">
+                    <h2>Week 5: Loops</h2>
+                    <p>Content for Week 5: Loops will be here...</p>
+                </div>
+                <div id="week7" class="topic-content hidden">
+                    <h2>Week 7: Objects and Arrays</h2>
+                    <p>Content for Week 7: Objects and Arrays will be here...</p>
+                </div>
+                <div id="week8" class="topic-content hidden">
+                    <h2>Week 8: Built in Functions and Methods</h2>
+                    <p>Content for Week 8: Built in Functions and Methods will be here...</p>
+                </div>
+                <div id="week9" class="topic-content hidden">
+                    <h2>Week 9: User Defined Functions and Methods</h2>
+                    <p>Content for Week 9: User Defined Functions and Methods will be here...</p>
+                </div>
+                <div id="week10" class="topic-content hidden">
+                    <h2>Week 10: Testing</h2>
+                    <p>Content for Week 10: Testing will be here...</p>
+                </div>
+            {% endif %}
+        </div>
+    </div> <!-- This closing div was missing -->
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
